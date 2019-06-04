@@ -17,19 +17,7 @@ RUN useradd app -u 1001 -g app -d /app -s /bin/bash
 ARG PROJECT_NAME
 ARG VERSION
 ARG REVISION
-ARG elkHost
-ARG elkIndex
-ARG elkHealth
-ARG rabbitHost
-ARG rabbitPort
-ARG rabbitUser
-ARG rabbitPass
-ARG redisHost
-ARG redisPort
-ARG redisPass
-ARG oracleUrl
-ARG oracleUser
-ARG oraclePass
+
 
 #Configuracao de variaveis de ambiente da imagem
 ENV PROJECT_NAME $PROJECT_NAME
@@ -52,4 +40,4 @@ WORKDIR /app
 CMD java -jar $APPNAME -Xms678m -Xmx950m
 
 #Exp?e a porta 8080 quando o container ? montado.
-EXPOSE 9090
+EXPOSE 9091
