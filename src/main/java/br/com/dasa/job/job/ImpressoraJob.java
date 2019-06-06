@@ -27,11 +27,11 @@ public class ImpressoraJob implements Serializable {
     @Value("${job-config.minimo-horas-consideras-para-exclusao}")
     private int minimoHorasConsideradasParaExclusao;
 
-    private final String URL_DELETAR_IMPRESSORAS = "http://localhost:9090/impressoras";
+    private final String URL_DELETAR_IMPRESSORAS = "http://printer-core-api.dev.digital-apps.io/impressoras";
 
-    private final String URL_BUSCAR_IMPRESSORAS = "http://localhost:9090/impressoras";
+    private final String URL_BUSCAR_IMPRESSORAS = "http://printer-core-api.dev.digital-apps.io/impressoras";
 
-    private final String URL_DELETAR_UNIDADES = "http://localhost:9090/unidade";
+    private final String URL_DELETAR_UNIDADES = "http://printer-core-api.dev.digital-apps.io/unidade";
 
     @Autowired
     private RestTemplate restTemplate;
