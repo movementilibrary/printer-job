@@ -20,8 +20,7 @@ dependencies {
 }
 
 group = 'br.com.dasa'
-version = '0.0.1-SNAPSHOT'
-description = 'job'
+description = 'API para limpeza das impressoras'
 sourceCompatibility = '1.8'
 
 publishing {
