@@ -5,10 +5,14 @@
 plugins {
     id 'java'
     id 'maven-publish'
+    id 'org.springframework.boot' version '2.1.4.RELEASE'
 }
 
 repositories {
-    mavenLocal()
+    maven {
+        url = 'http://www.datanucleus.org/downloads/maven2/'
+    }
+
     maven {
         url = 'http://repo.maven.apache.org/maven2'
     }
