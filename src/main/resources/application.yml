@@ -3,4 +3,4 @@ server:
 
 job-config:
   cron: 0 0/1 * * * *
-  minimo-horas-consideras-para-exclusao: 2
+  minimo-horas-consideras-para-exclusao: 6
