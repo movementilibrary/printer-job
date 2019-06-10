@@ -6,6 +6,3 @@ job-config:
   minimo-horas-consideras-para-exclusao: 6
 
 env-type: dev
-
-elk:
-  url: http://elk.dasalabs.com.br

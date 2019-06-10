@@ -2,14 +2,14 @@
 <configuration>
 
     <springProperty scope="context" name="ELK_HOST" source="elk.url" defaultValue="http://elk.dasalabs.com.br/_bulk"/>
-    <property name="INDEX_ELK" value="printer-core-job-${env-type}-%d{yyyy-MM-dd}"/>
+    <springProperty scope="context" name="ENV_TYPE" source="env-type" defaultValue="dev"/>
 
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
     <appender name="ELK" class="com.internetitem.logback.elasticsearch.ElasticsearchAppender">
         <url>${ELK_HOST}</url>
         <type>logs</type>
-        <index>%{INDEX_ELK}</index>
+        <index>printer-core-job-${ENV_TYPE}-%d{yyyy-MM-dd}</index>
         <errorLoggerName>es</errorLoggerName>
         <properties>
             <property>
@@ -45,11 +45,12 @@
         </headers>
     </appender>
 
-    <logger name="com.internetitem.logback" additivity="false" level="info">
+    <logger name="com.internetitem.logback" additivity="false" level="debug">
         <appender-ref ref="CONSOLE"/>
     </logger>
 
     <root level="info">
         <appender-ref ref="ELK"/>
+        <appender-ref ref="CONSOLE"/>
     </root>
 </configuration>
