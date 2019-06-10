@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+
+    <springProperty scope="context" name="ELK_HOST" source="elk.url" defaultValue="http://elk.dasalabs.com.br/_bulk"/>
+    <property name="INDEX_ELK" value="printer-core-job-${env-type}-%d{yyyy-MM-dd}"/>
+
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
     <appender name="ELK" class="com.internetitem.logback.elasticsearch.ElasticsearchAppender">
-        <url>http://elk.dasalabs.com.br/_bulk</url>
+        <url>${ELK_HOST}</url>
         <type>logs</type>
-        <index>gliese-portal-%date{yyyy.MM.dd}</index>
+        <index>%{INDEX_ELK}</index>
         <errorLoggerName>es</errorLoggerName>
         <properties>
             <property>

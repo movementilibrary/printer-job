@@ -1,0 +1,12 @@
+server:
+  port: 9091
+
+job-config:
+  cron: ${cron}
+  minimo-horas-consideras-para-exclusao: ${minimoExclusao}
+
+env-type: ${envType}
+
+elk:
+  url: ${elkHost}
+  index: ${elkIndex}

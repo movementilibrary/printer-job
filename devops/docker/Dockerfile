@@ -17,6 +17,9 @@ RUN useradd app -u 1001 -g app -d /app -s /bin/bash
 ARG PROJECT_NAME
 ARG VERSION
 ARG REVISION
+ARG elkHost
+ARG elkIndex
+ARG envType
 
 
 #Configuracao de variaveis de ambiente da imagem
